@@ -1,89 +1,159 @@
 {
   "playlists": [
     {
-      "playlistID": "pl001",
-      "playlist_name": "Deep Focus Jazz",
-      "playlist_author": "JazzLover99",
-      "playlist_art": "https://placehold.co/150x150/FF6347/FFFFFF?text=Jazz",
-      "likes": 12,
+      "playlistID": "se001",
+      "playlist_name": "Deep Focus: The Matrix",
+      "playlist_author": "Forrest Frank Fan",
+      "playlist_art": "https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "likes": 0,
       "songs": [
-        {"songID": "s101", "title": "Midnight Blues", "artist": "Smooth Notes", "duration": "4:30"},
-        {"songID": "s102", "title": "Coffee Break Bop", "artist": "Urban Grooves", "duration": "3:15"}
+        {"songID": "s001", "title": "Good Day", "artist": "Forrest Frank", "duration": "3:05"},
+        {"songID": "s009", "title": "Good Things", "artist": "Forrest Frank", "duration": "3:20"},
+        {"songID": "s011", "title": "Goodbyes", "artist": "Forrest Frank", "duration": "2:50"},
+        {"songID": "s019", "title": "Bad Decisions", "artist": "Forrest Frank", "duration": "2:40"},
+        {"songID": "s021", "title": "Don't You Worry", "artist": "Forrest Frank", "duration": "3:15"},
+        {"songID": "s029", "title": "Home Soon", "artist": "Forrest Frank", "duration": "3:40"},
+        {"songID": "s031", "title": "Never Give Up", "artist": "Forrest Frank", "duration": "2:55"},
+        {"songID": "s039", "title": "Bright Side", "artist": "Forrest Frank", "duration": "3:00"},
+        {"songID": "s041", "title": "Sunlight", "artist": "Forrest Frank", "duration": "3:35"},
+        {"songID": "s049", "title": "Sweet Melody", "artist": "Forrest Frank", "duration": "4:00"}
       ]
     },
     {
-      "playlistID": "pl002",
-      "playlist_name": "Morning Motivation",
-      "playlist_author": "FitLife",
-      "playlist_art": "https://placehold.co/150x150/4CAF50/FFFFFF?text=Workout",
-      "likes": 34,
+      "playlistID": "se002",
+      "playlist_name": "Morning Standup Jams",
+      "playlist_author": "Sondae Sounds",
+      "playlist_art": "https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 4,
       "songs": [
-        {"songID": "s201", "title": "Pump It Up", "artist": "Adrenaline Beats", "duration": "2:50"},
-        {"songID": "s202", "title": "Go Harder", "artist": "Energy Core", "duration": "3:05"},
-        {"songID": "s203", "title": "Cool Down", "artist": "Relax Rhythm", "duration": "4:00"}
+        {"songID": "s002", "title": "Summer Snow", "artist": "Sondae", "duration": "3:40"},
+        {"songID": "s010", "title": "Home", "artist": "Sondae", "duration": "4:00"},
+        {"songID": "s012", "title": "Let Go", "artist": "Sondae", "duration": "3:15"},
+        {"songID": "s022", "title": "Distant Shores", "artist": "Sondae", "duration": "3:55"},
+        {"songID": "s030", "title": "Golden Hour", "artist": "Sondae", "duration": "4:20"},
+        {"songID": "s032", "title": "Floating", "artist": "Sondae", "duration": "3:30"},
+        {"songID": "s052", "title": "Skyline Drive", "artist": "Sondae", "duration": "4:10"},
+        {"songID": "s060", "title": "Night Lights", "artist": "Sondae", "duration": "4:05"},
+        {"songID": "s072", "title": "Dreamscape", "artist": "Sondae", "duration": "3:50"},
+        {"songID": "s080", "title": "Reflections", "artist": "Sondae", "duration": "3:25"}
       ]
     },
     {
-      "playlistID": "pl003",
-      "playlist_name": "Chill Evening Acoustic",
-      "playlist_author": "CozyTunes",
-      "playlist_art": "https://placehold.co/150x150/6A5ACD/FFFFFF?text=Acoustic",
-      "likes": 8,
+      "playlistID": "se003",
+      "playlist_name": "Debug & Chill",
+      "playlist_author": "Alex Jean Acoustics",
+      "playlist_art": "https://images.pexels.com/photos/1876876/pexels-photo-1876876.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 3,
       "songs": [
-        {"songID": "s301", "title": "Fireside Stories", "artist": "Gentle Strings", "duration": "5:10"}
+        {"songID": "s003", "title": "Clarity", "artist": "Alex Jean", "duration": "3:10"},
+        {"songID": "s013", "title": "What I Needed", "artist": "Alex Jean", "duration": "3:00"},
+        {"songID": "s020", "title": "Steady", "artist": "Alex Jean", "duration": "3:25"},
+        {"songID": "s023", "title": "Lost In Thought", "artist": "Alex Jean", "duration": "3:45"},
+        {"songID": "s033", "title": "Whispers", "artist": "Alex Jean", "duration": "2:50"},
+        {"songID": "s043", "title": "Daydream", "artist": "Alex Jean", "duration": "3:30"},
+        {"songID": "s050", "title": "Echoes", "artist": "Alex Jean", "duration": "3:15"},
+        {"songID": "s053", "title": "Moment Of Peace", "artist": "Alex Jean", "duration": "3:05"},
+        {"songID": "s063", "title": "Quiet Streets", "artist": "Alex Jean", "duration": "3:20"},
+        {"songID": "s073", "title": "Deep Breath", "artist": "Alex Jean", "duration": "3:00"}
       ]
     },
     {
-      "playlistID": "pl004",
-      "playlist_name": "Road Trip Rock",
-      "playlist_author": "Traveler",
-      "playlist_art": "https://placehold.co/150x150/FFD700/000000?text=Road+Trip",
-      "likes": 21,
+      "playlistID": "se004",
+      "playlist_name": "Deployment Day Anthems",
+      "playlist_author": "Caleb Gordon Beats",
+      "playlist_art": "https://images.pexels.com/photos/369263/pexels-photo-369263.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 15,
       "songs": [
-        {"songID": "s401", "title": "Highway Bound", "artist": "Asphalt Kings", "duration": "3:55"},
-        {"songID": "s402", "title": "Dusty Trails", "artist": "Desert Wanderers", "duration": "4:20"}
+        {"songID": "s008", "title": "The Kid", "artist": "Caleb Gordon", "duration": "2:45"},
+        {"songID": "s014", "title": "Blessings", "artist": "Caleb Gordon", "duration": "2:30"},
+        {"songID": "s024", "title": "No Looking Back", "artist": "Caleb Gordon", "duration": "2:50"},
+        {"songID": "s034", "title": "New Heights", "artist": "Caleb Gordon", "duration": "2:40"},
+        {"songID": "s040", "title": "Unstoppable", "artist": "Caleb Gordon", "duration": "2:55"},
+        {"songID": "s044", "title": "Victory Lap", "artist": "Caleb Gordon", "duration": "2:35"},
+        {"songID": "s054", "title": "Breakthrough", "artist": "Caleb Gordon", "duration": "2:45"},
+        {"songID": "s064", "title": "On The Rise", "artist": "Caleb Gordon", "duration": "2:30"},
+        {"songID": "s074", "title": "Momentum", "artist": "Caleb Gordon", "duration": "2:50"},
+        {"songID": "s079", "title": "Forward Motion", "artist": "Caleb Gordon", "duration": "2:45"}
       ]
     },
     {
-      "playlistID": "pl005",
-      "playlist_name": "Electronic Dreamscapes",
-      "playlist_author": "Synapse",
-      "playlist_art": "https://placehold.co/150x150/1E90FF/FFFFFF?text=Electronic",
-      "likes": 19,
+      "playlistID": "se005",
+      "playlist_name": "Learning New Tech",
+      "playlist_author": "Hulvey's Highlights",
+      "playlist_art": "https://images.pexels.com/photos/256302/pexels-photo-256302.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 20,
       "songs": [
-        {"songID": "s501", "title": "Galactic Drift", "artist": "Cosmic Sound", "duration": "6:00"}
+        {"songID": "s004", "title": "Can't Tell It All", "artist": "Hulvey", "duration": "3:00"},
+        {"songID": "s015", "title": "Holy Spirit", "artist": "Hulvey", "duration": "3:30"},
+        {"songID": "s025", "title": "Walk", "artist": "Hulvey", "duration": "3:10"},
+        {"songID": "s035", "title": "Know Me", "artist": "Hulvey", "duration": "3:20"},
+        {"songID": "s045", "title": "Heaven Is In My View", "artist": "Hulvey", "duration": "3:40"},
+        {"songID": "s055", "title": "Higher", "artist": "Hulvey", "duration": "3:05"},
+        {"songID": "s065", "title": "The 7", "artist": "Hulvey", "duration": "3:10"},
+        {"songID": "s075", "title": "Reasons", "artist": "Hulvey", "duration": "3:20"},
+        {"songID": "s005_alt", "title": "Back Then", "artist": "Hulvey", "duration": "2:55"},
+        {"songID": "s006_alt", "title": "We Against The World", "artist": "Hulvey", "duration": "4:15"}
       ]
     },
     {
-      "playlistID": "pl006",
-      "playlist_name": "Classical Study Mix",
-      "playlist_author": "Scholar",
-      "playlist_art": "https://placehold.co/150x150/A020F0/FFFFFF?text=Classical",
-      "likes": 7,
+      "playlistID": "se006",
+      "playlist_name": "Code Review Vibes",
+      "playlist_author": "Kijan Boone Grooves",
+      "playlist_art": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 0,
       "songs": [
-        {"songID": "s601", "title": "Baroque Bliss", "artist": "Orchestral Harmony", "duration": "7:30"},
-        {"songID": "s602", "title": "Serene Sonata", "artist": "Melody Maestro", "duration": "5:40"}
+        {"songID": "s005", "title": "Just Wanna Be", "artist": "Kijan Boone", "duration": "2:55"},
+        {"songID": "s016", "title": "Real Love", "artist": "Kijan Boone", "duration": "3:05"},
+        {"songID": "s026", "title": "Stay Here", "artist": "Kijan Boone", "duration": "3:20"},
+        {"songID": "s036", "title": "Better Days", "artist": "Kijan Boone", "duration": "3:10"},
+        {"songID": "s046", "title": "My Own Way", "artist": "Kijan Boone", "duration": "2:45"},
+        {"songID": "s056", "title": "Never Change", "artist": "Kijan Boone", "duration": "3:30"},
+        {"songID": "s066", "title": "Hold On", "artist": "Kijan Boone", "duration": "3:00"},
+        {"songID": "s076", "title": "Free Spirit", "artist": "Kijan Boone", "duration": "3:05"},
+        {"songID": "s004_alt", "title": "Lost But Found", "artist": "Kijan Boone", "duration": "3:00"},
+        {"songID": "s015_alt", "title": "Sweet Surrender", "artist": "Kijan Boone", "duration": "3:30"}
       ]
     },
     {
-      "playlistID": "pl007",
-      "playlist_name": "Pop Hits 2025",
-      "playlist_author": "ChartTopper",
-      "playlist_art": "https://placehold.co/150x150/FF1493/FFFFFF?text=Pop",
-      "likes": 50,
+      "playlistID": "se007",
+      "playlist_name": "Algorithmic Flow",
+      "playlist_author": "Madison Ryann Ward Soul",
+      "playlist_art": "https://images.pexels.com/photos/17483910/pexels-photo-17483910/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-the-concept-of-artificial-general-intelligence-agi-it-was-created-by-artist-domhnall-malone-as-part-of-th.png?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 0,
       "songs": [
-        {"songID": "s701", "title": "Summer Anthem", "artist": "Vocal Star", "duration": "3:10"}
+        {"songID": "s006", "title": "New Beginning", "artist": "Madison Ryann Ward", "duration": "4:15"},
+        {"songID": "s017", "title": "Mirror", "artist": "Madison Ryann Ward", "duration": "3:50"},
+        {"songID": "s027", "title": "Open", "artist": "Madison Ryann Ward", "duration": "4:30"},
+        {"songID": "s037", "title": "Higher Ground", "artist": "Madison Ryann Ward", "duration": "4:00"},
+        {"songID": "s047", "title": "Soul Searching", "artist": "Madison Ryann Ward", "duration": "4:25"},
+        {"songID": "s057", "title": "Love's Call", "artist": "Madison Ryann Ward", "duration": "4:40"},
+        {"songID": "s067", "title": "Walk Away", "artist": "Madison Ryann Ward", "duration": "3:55"},
+        {"songID": "s077", "title": "Deep Waters", "artist": "Madison Ryann Ward", "duration": "4:10"},
+        {"songID": "s007_alt", "title": "Light Beyond", "artist": "Madison Ryann Ward", "duration": "5:20"},
+        {"songID": "s018_alt", "title": "Golden Slumbers", "artist": "Madison Ryann Ward", "duration": "4:00"}
       ]
     },
     {
-      "playlistID": "pl008",
-      "playlist_name": "Indie Discoveries",
-      "playlist_author": "HiddenGems",
-      "playlist_art": "https://placehold.co/150x150/FFA500/FFFFFF?text=Indie",
-      "likes": 11,
+      "playlistID": "se008",
+      "playlist_name": "End of Sprint Wind Down",
+      "playlist_author": "Joe L. Barnes Relax",
+      "playlist_art": "https://images.pexels.com/photos/7543703/pexels-photo-7543703.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "likes": 6,
       "songs": [
-        {"songID": "s801", "title": "Uncharted Territory", "artist": "Echo Bloom", "duration": "4:00"}
+        {"songID": "s007", "title": "Grace", "artist": "Joe L. Barnes", "duration": "5:20"},
+        {"songID": "s018", "title": "The Greatest", "artist": "Joe L. Barnes", "duration": "4:00"},
+        {"songID": "s028", "title": "Promises", "artist": "Joe L. Barnes", "duration": "5:00"},
+        {"songID": "s038", "title": "Resting Place", "artist": "Joe L. Barnes", "duration": "4:10"},
+        {"songID": "s048", "title": "Comfort Zone", "artist": "Joe L. Barnes", "duration": "5:30"},
+        {"songID": "s058", "title": "Still Waters", "artist": "Joe L. Barnes", "duration": "4:50"},
+        {"songID": "s068", "title": "Sanctuary", "artist": "Joe L. Barnes", "duration": "4:20"},
+        {"songID": "s078", "title": "Peace Be Still", "artist": "Joe L. Barnes", "duration": "5:05"},
+        {"songID": "s008_alt", "title": "Slow Down", "artist": "Joe L. Barnes", "duration": "2:45"},
+        {"songID": "s014_alt", "title": "Unwind", "artist": "Joe L. Barnes", "duration": "2:30"}
       ]
     }
   ]
 }
+
+
+

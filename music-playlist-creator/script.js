@@ -7,21 +7,24 @@ const modalTitle = document.getElementById('playlistModalTitle');
 const modalAuthor = document.getElementById('playlistModalAuthor');
 const songListContainer = document.getElementById('songListContainer'); 
 const shuffleButton = document.getElementById('shuffleButton')
+const playlistContainer = document.getElementById('playlist-container');
 let playlistsData;
 let currentPlaylistInModal =null;
 
-function openModal(festival) {
-   document.getElementById('festivalName').innerText = festival.name;
-   document.getElementById('festivalImage').src = festival.imageUrl;
-   document.getElementById('festivalDates').innerText = `Dates: ${festival.dates}`;
-   document.getElementById('festivalLocation').innerText = `Location: ${festival.location}`;
-   document.getElementById('artistLineup').innerHTML = `<strong>Lineup:</strong> ${festival.lineup.join(', ')}`;
-   modal.style.display = "block";
+function openPlaylistModal(playlist) { // Renamed function and parameter
+   document.getElementById('playlistModalTitle').textContent = playlist.playlist_name; // New ID, playlist data
+   document.getElementById('playlistModalImage').src = playlist.playlist_art; // New ID, playlist data
+   document.getElementById('playlistModalAuthor').textContent = `Author: ${playlist.playlist_author}`; // New ID, playlist data
+   // Assuming you'll display songs directly in a new container, not 'lineup'
+   // document.getElementById('songListContainer').innerHTML = `<strong>Songs:</strong> ${playlist.songs.map(s => s.title).join(', ')}`; // Example
+   // You already have renderSongsInModal, so we'd use that instead
+   renderSongsInModal(playlist.songs); // Use the dedicated function for songs
+   
+   // This 'modal' variable likely needs to be renamed too, or it's a global one
+   // If it's the main modal div itself:
+   playlistModal.style.display = "flex"; // Assuming playlistModal is the main modal element
 }
 
-span.onclick = function() {
-   modal.style.display = "none";
-}
 window.onclick = function(event) {
    if (event.target == modal) {
       modal.style.display = "none";
@@ -30,7 +33,7 @@ window.onclick = function(event) {
 // script.js
 
 // --- Global Variable for the playlist container ---
-const playlistContainer = document.getElementById('playlist-container');
+
 // --- Function to dynamically create and display playlist cards ---
 /**
  * Displays a list of playlist cards in the designated HTML container.
@@ -69,29 +72,44 @@ function displayPlaylists(playlistsArray) {
  * @param {Event} event - The click event object.
  */
 function handleLikeClick(event) {
-    // Prevent the card's open modal click from also firing
-    event.stopPropagation();
+    event.stopPropagation(); // Prevents modal from opening
 
-    // 1. Get the playlist ID from the clicked button
-    // 'this' refers to the button that was clicked
     const clickedButton = event.currentTarget;
     const playlistId = clickedButton.dataset.playlistId;
 
-    // 2. Find the corresponding playlist object in your data array
-    // (Assuming 'playlistsData' is the array that holds your original data)
     const playlistToUpdate = playlistsData.find(p => p.playlistID === playlistId);
 
-    if (playlistToUpdate) {
-        // 3. Increment the like count in the data
-        playlistToUpdate.likes = (playlistToUpdate.likes || 0) + 1;
-
-        // 4. Update the displayed like count on the card itself
-        // The like count is the next sibling element (the <span> with class 'like-count')
-        const likeCountSpan = clickedButton.nextElementSibling;
-        if (likeCountSpan) {
-            likeCountSpan.textContent = playlistToUpdate.likes;
-        }
+    if (!playlistToUpdate) {
+        console.error('Error: Could not find playlist with ID:', playlistId);
+        return;
     }
+
+    const likeCountSpan = clickedButton.nextElementSibling; // The span displaying the count
+    const heartIcon = clickedButton.querySelector('.heart-icon'); // The heart span inside the button
+
+    if (playlistToUpdate.isLiked) {
+        // If already liked, unlike it
+        playlistToUpdate.likes = (parseInt(playlistToUpdate.likes) || 0) - 1;
+        playlistToUpdate.isLiked = false;
+        if (heartIcon) heartIcon.classList.remove('liked'); // Remove red color
+    } else {
+        // If not liked, like it
+        playlistToUpdate.likes = (parseInt(playlistToUpdate.likes) || 0) + 1;
+        playlistToUpdate.isLiked = true;
+        if (heartIcon) heartIcon.classList.add('liked'); // Add red color
+    }
+
+    // Ensure likes don't go below 0
+    if (playlistToUpdate.likes < 0) {
+        playlistToUpdate.likes = 0;
+    }
+
+    // Update the displayed count
+    if (likeCountSpan) {
+        likeCountSpan.textContent = playlistToUpdate.likes;
+    }
+
+    console.log(`Playlist ${playlistToUpdate.playlist_name} - Likes: ${playlistToUpdate.likes}, Liked: ${playlistToUpdate.isLiked}`);
 }
   // 3. Iterate over each playlist object in the array and create its card
   // Inside your displayPlaylists function:
@@ -139,7 +157,7 @@ playlistsArray.forEach(playlist => {
     // Create the Like Button
     const likeButton = document.createElement('button');
     likeButton.classList.add('like-button');
-    likeButton.innerHTML = `<span class="heart-icon">♡</span>`;
+    likeButton.innerHTML = `<span class="heart-icon ${playlist.isLiked ? 'liked' : ''}">♥</span>`;
     // Attach the playlistID to the button using a data attribute
     likeButton.dataset.playlistId = playlist.playlistID;
 
@@ -261,6 +279,27 @@ function renderSongsInModal(songsArray) {
     // 6. Append the complete song list to the modal's song list container
     songListContainer.appendChild(ul);
 }
+function handleLikeClick(event) {
+    event.stopPropagation();
+    const clickedButton = event.currentTarget;
+    const playlistId = clickedButton.dataset.playlistId;
+    const playlistToUpdate = playlistsData.find(p => p.playlistID === playlistId);
+
+    if (playlistToUpdate) {
+        playlistToUpdate.likes = (parseInt(playlistToUpdate.likes) || 0) + 1;
+        const likeCountSpan = clickedButton.nextElementSibling;
+        if (likeCountSpan) {
+            likeCountSpan.textContent = playlistToUpdate.likes;
+        }
+        // Add this line to toggle the 'liked' class on the heart icon
+        const heartIcon = clickedButton.querySelector('.heart-icon');
+        if (heartIcon) {
+            heartIcon.classList.add('liked'); // Make it red immediately
+            // Optional: remove after a short delay if you want it to revert, or keep it red
+            // setTimeout(() => heartIcon.classList.remove('liked'), 500);
+        }
+    }
+}
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -268,7 +307,79 @@ function shuffleArray(array) {
     }
     return array;
 }
+function getRandomPlaylist(playlists) {
+    if (!playlists || playlists.length ===0) {
+        return null
+    }
+    const randomIndex = Math.floor(Math.random()* playlists.length)
+    return playlists[randomIndex]
+}
+/**
+ * Renders and displays a single featured playlist on the designated container.
+ *
+ * @param {Object|null} playlist - The playlist object to display, or null if none.
+ */
+function displayFeaturedPlaylist(playlist) {
+    const featuredContainer = document.getElementById('featured-playlist-container');
+    if (!featuredContainer) return; // Exit if the container isn't found (i.e., not on featured.html)
 
+    featuredContainer.innerHTML = ''; // Clear previous content
+
+    if (!playlist) {
+        // Display a message if no playlist is available (e.g., error or empty data)
+        featuredContainer.innerHTML = '<p style="text-align:center; padding:50px; color:#888;">No featured playlist available.</p>';
+        return;
+    }
+
+    // Create and append the playlist image
+    const img = document.createElement('img');
+    img.src = playlist.playlist_art;
+    img.alt = `Cover for ${playlist.playlist_name}`;
+    img.classList.add('featured-playlist-image');
+    img.onerror = function() {
+        this.src = 'https://placehold.co/300x300/CCCCCC/000000?text=No+Image'; // Fallback
+        this.style.objectFit = 'contain';
+    };
+    featuredContainer.appendChild(img);
+
+    // Create a div for playlist details and song list
+    const detailsDiv = document.createElement('div');
+    detailsDiv.classList.add('featured-song-list');
+
+    // Create and append playlist title
+    const title = document.createElement('h2');
+    title.textContent = playlist.playlist_name;
+    detailsDiv.appendChild(title);
+
+    // Create and append playlist author
+    const author = document.createElement('p');
+    author.classList.add('author');
+    author.textContent = playlist.playlist_author;
+    detailsDiv.appendChild(author);
+
+    // Create and populate the song list (unordered list)
+    const ul = document.createElement('ul');
+    if (playlist.songs && playlist.songs.length > 0) {
+        playlist.songs.forEach(song => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${song.title} - ${song.artist}</span>
+                <span class="song-duration">${song.duration}</span>
+            `;
+            ul.appendChild(li);
+        });
+    } else {
+        const noSongs = document.createElement('li');
+        noSongs.textContent = 'No songs in this playlist.';
+        noSongs.style.fontStyle = 'italic';
+        noSongs.style.color = '#888';
+        ul.appendChild(noSongs);
+    }
+    detailsDiv.appendChild(ul); // Append song list to details div
+
+    // Append the entire details section (title, author, songs)
+    featuredContainer.appendChild(detailsDiv);
+}
 // --- Event Listener: Execute code when the DOM is fully loaded ---
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Fetch data from 'data.json'
@@ -283,32 +394,65 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then(data => {
-      playlistsData = data.playlists;
-      // Once data is successfully parsed, call displayPlaylists.
-      // We expect the JSON to have a top-level key named 'playlists'.
-      displayPlaylists(data.playlists);
-    })
-    .catch(error => {
-      // Catch any errors during fetch or JSON parsing
-      console.error('Error fetching or parsing playlist data:', error);
-      // Display the "No playlists" message if there's an error
-      displayPlaylists([]);
-    });
-    // Close button click
-    closeBtn.addEventListener('click', closePlaylistModal);
+            playlistsData = data.playlists; // Ensure this assigns to your global playlistsData variable
+            playlistsData.forEach(playlist => {
+                playlist.isLiked = false; // Default to unliked
+            });
+            console.log('Fetched playlistsData (global):', playlistsData);
 
-    // Click outside modal content (overlay)
-    window.addEventListener('click', (event) => {
-        if (event.target === playlistModal) { // If the click target is the modal backdrop itself
-            closePlaylistModal();
-        }
-    });
+            // <--- PUT THE CONDITIONAL EXECUTION BLOCK HERE --->
+            // This determines which function to call based on the current page
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                displayPlaylists(playlistsData);
+            } else if (window.location.pathname.endsWith('featured.html')) {
+                const randomPlaylist = getRandomPlaylist(playlistsData);
+                displayFeaturedPlaylist(randomPlaylist);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing playlist data:', error);
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                displayPlaylists([]); // Show "no playlists" on 'All' page
+            } else if (window.location.pathname.endsWith('featured.html')) {
+                displayFeaturedPlaylist(null); // Show "no featured" on 'Featured' page
+            }
+        });
 
-// Optional: Close with Escape key
-window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && playlistModal.style.display === 'flex') {
-        closePlaylistModal();
+    // All these event listeners must be placed AFTER their respective elements
+    // have been selected/assigned inside the DOMContentLoaded block.
+
+    // Close button click listener
+    if (closeBtn) { // Check if closeBtn was found
+        closeBtn.addEventListener('click', closePlaylistModal);
+    } else {
+        console.warn("Close button element not found. Modal close by button may not work.");
     }
-});
-});
 
+
+    // Click outside modal content (overlay) listener
+    if (playlistModal) { // Check if playlistModal was found
+        window.addEventListener('click', (event) => {
+            if (event.target === playlistModal) { // If the click target is the modal backdrop itself
+                closePlaylistModal();
+            }
+        });
+    } else {
+        console.warn("Playlist modal element not found. Modal close by overlay may not work.");
+    }
+
+
+    // Shuffle button listener
+    if (shuffleButton) { // Check if shuffleButton was found
+        shuffleButton.addEventListener('click', () => {
+            if (currentPlaylistInModal && currentPlaylistInModal.songs) {
+                shuffleArray(currentPlaylistInModal.songs);
+                renderSongsInModal(currentPlaylistInModal.songs);
+            }
+        });
+    } else {
+        console.warn("Shuffle button element not found. Shuffle functionality may not work.");
+    }
+
+    // No code should be placed directly after the DOMContentLoaded closing brace
+    // unless it's a global function definition.
+}); // This is the closing brace for DOMContentLoaded
