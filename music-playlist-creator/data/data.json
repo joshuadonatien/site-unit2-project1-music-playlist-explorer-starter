@@ -1,0 +1,89 @@
+{
+  "playlists": [
+    {
+      "playlistID": "pl001",
+      "playlist_name": "Deep Focus Jazz",
+      "playlist_author": "JazzLover99",
+      "playlist_art": "https://placehold.co/150x150/FF6347/FFFFFF?text=Jazz",
+      "likes": 12,
+      "songs": [
+        {"songID": "s101", "title": "Midnight Blues", "artist": "Smooth Notes", "duration": "4:30"},
+        {"songID": "s102", "title": "Coffee Break Bop", "artist": "Urban Grooves", "duration": "3:15"}
+      ]
+    },
+    {
+      "playlistID": "pl002",
+      "playlist_name": "Morning Motivation",
+      "playlist_author": "FitLife",
+      "playlist_art": "https://placehold.co/150x150/4CAF50/FFFFFF?text=Workout",
+      "likes": 34,
+      "songs": [
+        {"songID": "s201", "title": "Pump It Up", "artist": "Adrenaline Beats", "duration": "2:50"},
+        {"songID": "s202", "title": "Go Harder", "artist": "Energy Core", "duration": "3:05"},
+        {"songID": "s203", "title": "Cool Down", "artist": "Relax Rhythm", "duration": "4:00"}
+      ]
+    },
+    {
+      "playlistID": "pl003",
+      "playlist_name": "Chill Evening Acoustic",
+      "playlist_author": "CozyTunes",
+      "playlist_art": "https://placehold.co/150x150/6A5ACD/FFFFFF?text=Acoustic",
+      "likes": 8,
+      "songs": [
+        {"songID": "s301", "title": "Fireside Stories", "artist": "Gentle Strings", "duration": "5:10"}
+      ]
+    },
+    {
+      "playlistID": "pl004",
+      "playlist_name": "Road Trip Rock",
+      "playlist_author": "Traveler",
+      "playlist_art": "https://placehold.co/150x150/FFD700/000000?text=Road+Trip",
+      "likes": 21,
+      "songs": [
+        {"songID": "s401", "title": "Highway Bound", "artist": "Asphalt Kings", "duration": "3:55"},
+        {"songID": "s402", "title": "Dusty Trails", "artist": "Desert Wanderers", "duration": "4:20"}
+      ]
+    },
+    {
+      "playlistID": "pl005",
+      "playlist_name": "Electronic Dreamscapes",
+      "playlist_author": "Synapse",
+      "playlist_art": "https://placehold.co/150x150/1E90FF/FFFFFF?text=Electronic",
+      "likes": 19,
+      "songs": [
+        {"songID": "s501", "title": "Galactic Drift", "artist": "Cosmic Sound", "duration": "6:00"}
+      ]
+    },
+    {
+      "playlistID": "pl006",
+      "playlist_name": "Classical Study Mix",
+      "playlist_author": "Scholar",
+      "playlist_art": "https://placehold.co/150x150/A020F0/FFFFFF?text=Classical",
+      "likes": 7,
+      "songs": [
+        {"songID": "s601", "title": "Baroque Bliss", "artist": "Orchestral Harmony", "duration": "7:30"},
+        {"songID": "s602", "title": "Serene Sonata", "artist": "Melody Maestro", "duration": "5:40"}
+      ]
+    },
+    {
+      "playlistID": "pl007",
+      "playlist_name": "Pop Hits 2025",
+      "playlist_author": "ChartTopper",
+      "playlist_art": "https://placehold.co/150x150/FF1493/FFFFFF?text=Pop",
+      "likes": 50,
+      "songs": [
+        {"songID": "s701", "title": "Summer Anthem", "artist": "Vocal Star", "duration": "3:10"}
+      ]
+    },
+    {
+      "playlistID": "pl008",
+      "playlist_name": "Indie Discoveries",
+      "playlist_author": "HiddenGems",
+      "playlist_art": "https://placehold.co/150x150/FFA500/FFFFFF?text=Indie",
+      "likes": 11,
+      "songs": [
+        {"songID": "s801", "title": "Uncharted Territory", "artist": "Echo Bloom", "duration": "4:00"}
+      ]
+    }
+  ]
+}

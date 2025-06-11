@@ -4,3 +4,212 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+.page-container {
+  max-width: 1200px auto; /* Or whatever maximum width you desire */
+  margin: 20px auto; /* Center the main content */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+h1 {
+  text-align: left;
+  color: #333;
+}
+
+.playlist-flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to go to the next line */
+  justify-content: space-between; /* Pushes first/last items to edges, distributes space */
+  /* If you want perfect equidistant spacing all around, consider padding on the container
+     and then flex-basis adjustments, or use space-evenly if modern browser support is okay.
+     For this look, space-between works well with adjusted flex-basis. */
+  gap: 20px; /* Modern way to add spacing between flex items */
+  /* Remove negative margins if using gap */
+}
+
+.playlist-card {
+/* flex-grow: 0 (don't grow beyond basis)
+     flex-shrink: 0 (don't shrink below basis to maintain 4 per row)
+     flex-basis: calculate width for 4 items minus gap */
+  flex: 0 0 calc(25% - 15px); /* Adjusted for gap (20px gap / 4 items in a row = 5px per side, 15px is a rough estimate to account for 3 gaps across 4 items)*/
+  /* A better flex-basis would be:
+     flex: 0 0 calc((100% / 4) - ((4 - 1) * 20px / 4));
+     Or even simpler if using gap: */
+  /* flex: 0 0 calc(25% - (20px * 3 / 4)); */ /* Each item takes 25% but loses a fraction of the gap */
+  /* The most straightforward for gap: */
+  flex: 0 0 calc( (100% - (3 * 30px)) / 4 ); /* (Total width - total gap space) / number of items */
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  display: flex; /* Use flexbox for internal card layout */
+  flex-direction: column; /* Stack image and details vertically */
+}
+
+/* Image placeholder and details styling is the same as the CSS Grid example */
+.playlist-image-placeholder {
+  width: 100%;
+  padding-bottom: 100%; /* Creates a square aspect ratio (1:1) */
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+  font-size: 2em;
+  position: relative;
+}
+
+.playlist-image-placeholder::before,
+.playlist-image-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 2px;
+  background-color: #a0a0a0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.playlist-image-placeholder::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.playlist-details {
+  padding: 15px;
+  text-align: left;
+}
+
+.playlist-title {
+  font-size: 1.1em;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.creator-name {
+  font-size: 0.9em;
+  color: #777;
+  margin: 0 0 10px 0;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  font-size: 0.85em;
+  color: #777;
+}
+
+.heart-icon {
+  color: #ff4d4d;
+  margin-right: 5px;
+  font-size: 1.1em;
+}
+
+.modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+   background-color: #fefefe;
+   margin: 15% auto; /* 15% from the top and centered */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+}
+.close:hover,
+.close:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+#playlistModalImage {
+    display: block; /* Ensures image takes its own line */
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+    margin: 0 auto 20px auto; /* Center image and add bottom margin */
+    border-radius: 5px;
+}
+
+#playlistModalTitle {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#playlistModalAuthor {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.song-list-container {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.song-list-container h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.song-list-container ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.song-list-container li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.song-list-container li:last-child {
+    border-bottom: none;
+}
+
+.song-duration {
+    color: #888;
+    font-size: 0.9em;
+}#shuffleButton {
+    display: block; /* New line */
+    margin: 15px auto; /* Center it */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+#shuffleButton:hover {
+    background-color: #0056b3;
+}

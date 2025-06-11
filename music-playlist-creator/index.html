@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Music Playlist Explorer</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- Your header content here -->
-    </header>
 
-    <main> 
-        <!-- Your main content here -->
-    </main>
+    <div class="page-container">
+        <header>
+            <h1>Music Playlist Explorer</h1>
+        </header>
 
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
-    <script src="data/data.js"></script>
+        <main>
+            <div id="playlist-container" class="playlist-flex-container">
+                </div>
+        </main>
+
+        <div id="playlistModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="playlistModalImage" src="" alt="Playlist Image">
+                <h1 id="playlistModalTitle"></h1>
+                <p id="playlistModalAuthor"></p>
+                <button id="shuffleButton">Shuffle Songs</button>
+                <div id="songListContainer" class="song-list-container"></div>
+            </div>
+        </div>
+    </div> <footer>
+        </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
